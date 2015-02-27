@@ -1,0 +1,179 @@
+@import 'mixins'
+
+body
+  background default
+  font-family Tahoma, Arial, Sans Serif
+  color: #7A7166
+  font-size: 11px
+  line-height: 1.5em
+  background-attachment: fixed
+
+#preloader
+  position fixed
+  left 0
+  top 0
+  right 0
+  bottom 0
+  background default
+  z-index 100500
+  size(100%)
+  .bar
+    size(308px, 56px)
+    left 50%
+    top 50%
+    position fixed
+    z-index 1
+    margin (-@height / 2) 0 0 (-@width / 2)
+    background transparent url('/img/preloader.png') left bottom no-repeat
+  .fill
+    size(308px, 56px)
+    left 50%
+    top 50%
+    position fixed
+    overflow hidden
+    z-index 2
+    margin (-(@height + 1) / 2) 0 0 (-@width / 2)
+    background transparent url('/img/preloader.png') left top no-repeat
+
+#main
+  size(100%)
+  #navigation
+    opacity(0)
+    position fixed
+    left 50%
+    top 0
+    size(1160px, 58px)
+    margin 196px 0 0 (- @width / 2)
+    background #1d1f26
+    z-index 100
+    border 1px solid #33393F
+    ul
+      size(100%)
+      a
+        overflow hidden
+        cursor pointer
+        size(184px, 58px)
+        float left
+        display inline-block
+        color soft
+        border-left 1px solid #3c3d41
+        li
+          size(100%)
+          display block
+          padding 27px 0 0 23px
+          text-transform capitalize
+          font-size 11px
+          line-height 1.2em
+          font-weight bold
+          background transparent url('/img/marker.png') 12px 30px no-repeat
+        &.to_one, &.logo
+          border-left 1px solid transparent
+          li
+            padding 11px 0 0 23px
+        &.to_one
+          size(231px, 58px)
+        &.logo > li
+          padding 17px 0 0 35px
+        &.to_one > li, &.logo > li
+          background transparent !important
+        &:hover
+          color dark
+          background soft
+          li
+            background transparent url('/img/marker_on.png') 12px 30px no-repeat
+        &.to_one:hover, &.logo:hover, &.player:hover
+          color soft
+          background transparent
+        &.player > li#audio
+          position relative
+          size(24px, 16px)
+          margin 0px 0 0 12px
+          cursor pointer
+          background url('/img/audio-on.gif') left bottom no-repeat
+          &.off
+            background url('/img/audio-off.png') left bottom no-repeat !important
+
+  section
+    #layer
+      &.cloud
+        background url('/img/back/clouds.jpg') 50% 0
+        size(100%, 2092px)
+        back-size(cover)
+        z-index 1
+        position relative
+        top -80px
+      &.picture
+        z-index 2
+        position absolute
+        top 0
+        size(100%, auto)
+        .panel
+          background url('/img/back/panel.png') 50% 0
+          size(100%, 1657px)
+          back-size(cover)
+        .clock
+          background url('/img/back/clocks.jpg') 50% 0
+          size(100%, 3140px)
+          back-size(cover)
+    #content
+      opacity(0)
+      margin 278px 0 0 0
+      position absolute
+      z-index 10
+      top 0
+      size(100%, auto)
+      min-height 500px
+      .item
+        size(100%, 1200px)
+        .inner_item
+          size(1200px, 642px)
+          margin 0 auto
+          background rgba(0,0,0,0.5)
+          border 1px solid transparent
+          &.no_rectangle
+            background transparent
+          .about
+            margin-left 70px
+            margin-top 221px
+            size(531px, auto)
+            color #888785
+            h1
+              size(518px, 205px)
+              overflow hidden
+              background url('/img/text_about.png') left top no-repeat
+              text-indent 1000px
+              font-size 10em
+              white-space nowrap
+            p
+              margin 10px 0
+            .menu_one
+              width 1060px
+              margin 20px auto
+              ul
+                size(100%, auto)
+                a
+                  overflow hidden
+                  cursor pointer
+                  size(184px, 58px)
+                  float left
+                  display inline-block
+                  color soft
+                  border-left 1px solid #3c3d41
+                  border-top 1px solid #3c3d41
+                  border-bottom 1px solid #3c3d41
+                  &:last-child
+                    border-right 1px solid #3c3d41
+                  li
+                    size(100%)
+                    display block
+                    padding 27px 0 0 23px
+                    text-transform capitalize
+                    font-size 11px
+                    line-height 1.2em
+                    font-weight bold
+                    background transparent url('/img/marker.png') 12px 30px no-repeat
+                  &:hover
+                    color dark
+                    background soft
+                    li
+                      background transparent url('/img/marker_on.png') 12px 30px no-repeat

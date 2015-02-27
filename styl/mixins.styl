@@ -1,0 +1,203 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin 0
+  padding 0
+  border 0
+  font-size 1em
+  font inherit
+  vertical-align baseline
+
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section
+  display block
+
+body
+  line-height 1
+  min-width 1000px
+  width 100%
+  font-size 16px
+
+ol, ul
+  list-style none
+
+blockquote, q
+  quotes none
+
+blockquotebefore, blockquoteafter,
+qbefore, qafter
+  content ""
+  content none
+
+table
+  border-collapse collapse
+  border-spacing 0
+
+a
+  text-decoration none
+  color black
+
+.clear
+  clear both
+
+.hidden
+  display none
+
+opacity(n)
+  opacity n
+  filter unquote('progidDXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+media(n)
+  @media only screen and (max-width (n))
+    {block}
+
+transition(object, time, template)
+  -webkit-transiton object time template
+  -moz-transition object time template
+  -ms-transition object time template
+  -o-transition object time template
+  transition object time template
+
+transform(func)
+  -webkit-transform func
+  -moz-transform func
+  -ms-transform func
+  -o-transform func
+  transform func
+  
+text-shadow(x, y, blur, color)
+  -moz-text-shadow x y blur color
+  -webkit-text-shadow x y blur color
+  text-shadow x y blur color
+  
+box-shadow-inner(x, y, blur, color)
+  -webkit-box-shadow inset x y blur color
+  -moz-box-shadow inset x y blur color
+  box-shadow inset x y blur color
+  
+box-shadow(x, y, blur, color)
+  -webkit-box-shadow x y blur color
+  -moz-box-shadow x y blur color
+  box-shadow x y blur color
+  
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  -khtml-border-radius n
+  -o-border-radius n
+  -ms-border-radius n
+  -icab-border-radius n
+  border-radius n
+
+gradient(colorTop, colorBottom)
+  background $colorTop
+  background -moz-linear-gradient(top, colorTop 0%, colorBottom 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, colorTop), color-stop(100%, colorBottom))
+  background -webkit-linear-gradient(top, colorTop 0%, colorBottom 100%)
+  background -o-linear-gradient(top, colorTop 0%, colorBottom 100%)
+  background -ms-linear-gradient(top, colorTop 0%, colorBottom 100%)
+  background linear-gradient(to bottom, colorTop 0%, colorBottom 100%)
+  filter unquote('progidDXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=' + colorTop + ', EndColorStr=' + colorBottom +')')
+
+back-size(method)
+  -webkit-background-size method
+  -moz-background-size method
+  -o-background-size method
+  background-size method
+
+border-gradient-from-direction(top, bottom, direction)
+  revers = 'top'
+  if direction == "bottom"
+    revers = 'top'
+  if direction == "top"
+    revers = 'bottom'
+  if direction == "left"
+    revers = 'right'
+  if direction == "right"
+    revers = 'left'
+  border-style solid
+  -webkit-border-image -webkit-linear-gradient(direction, top, bottom) 1 100%
+  -moz-border-image -moz-linear-gradient(direction, top, bottom) 1 100%
+  -o-border-image -o-linear-gradient(direction, top, bottom) 1 100%
+  border-image linear-gradient(to $revers, top, bottom) 1 100%
+
+blur(n)
+  filter blur(n)
+  -webkit-filter blur(n)
+  -moz-filter blur(n)
+  -o-filter blur(n)
+  -ms-filter blur(n)
+  filter unquote('progidDXImageTransform.Microsoft.Blur(PixelRadius=' + n +')')
+
+appearance(attr)
+  -webkit-appearance attr
+  -moz-appearance attr
+  appearance attr
+
+size(w = false, h = false)
+  unless w
+    w = h
+  unless h
+    h = w
+  width w
+  height h
+
+columns(gap, count)
+  -webkit-columns count
+  -moz-columns count
+  columns count
+  -webkit-column-gap gap
+  -moz-column-gap gap
+  column-gap gap
+
+calc(property, expression)
+  property -webkit-calc(expression)
+  property -moz-calc(expression)
+  property -o-calc(expression)
+  property expression(expression)
+
+respond-to(media)
+  if media == 'little'
+    @media only screen and (max-width phone)
+      {block}
+  if media == 'phone'
+    @media only screen and (min-width phone + 1) and (max-width ipad - 1)
+      {block}
+  else if media == 'ipad'
+    @media only screen and (min-width ipad) and (max-width small - 1)
+      {block}
+  else if media == 'small'
+    @media only screen and (min-width small) and (max-width normal - 1)
+      {block}
+  else if media == 'normal'
+    @media only screen and (min-width normal) and (max-width large - 1)
+      {block}
+  else if media == 'large'
+    @media only screen and (min-width large)
+      {block}
+  else if media == 'mobile'
+    @media only screen and (max-width small)
+      {block}
+
+large = 1920px
+normal = 1680px
+small = 1280px
+ipad = 1024px
+phone = 800px
+error = #ef5c5e
+notice = #9fb375
+warning = #cba71f
+info = #5496ba
+default = #090c13
+soft = #fffef9
+dark = #323440

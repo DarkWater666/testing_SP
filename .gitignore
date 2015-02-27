@@ -1,0 +1,12 @@
+log/*
+test/*
+tmp/*
+spec/*
+public/uploads/*
+config/database.yml
+.*
+!/.gitignore
+.idea/
+cron.log
+error.log
+public/sitemap.xml
