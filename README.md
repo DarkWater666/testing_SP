@@ -1,3 +1,3 @@
-Testing task for Salt&Pepper
+Test job for Salt&Pepper
 ==================
 slim coffee stylus
